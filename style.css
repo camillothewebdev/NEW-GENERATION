@@ -8,6 +8,9 @@ body{
    color:#ededed;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+p, h1, h2, h3{
+    cursor: default;
+}
 header{
     background-color:black;
     position:sticky;
@@ -16,14 +19,18 @@ header{
     justify-content: space-between;
     align-items: center;
     padding:0.5em 1em;
-    z-index: 1;
+    z-index: 2;
 }
 header h1{
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap:0.5em;
+    cursor: pointer;
 }
 header img{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 nav{
     background-color: black;
@@ -35,9 +42,9 @@ nav{
     overflow-y: hidden;
     width: 100%;
     height: 0vh;
-    z-index: 1;
+    z-index: 2;
     position:fixed;
-    top:6;
+    top:8;
     left:0;
     transition:0.5s;
 }
@@ -77,7 +84,7 @@ section:nth-child(even){
 }
 .info{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap:0.5em;
     margin:0.5em 0em;
 }
@@ -93,10 +100,12 @@ footer{
     background-color: #081b29; 
     color: white;
     font-size: 1.5rem;
+    font-weight: bolder;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 5;
     height: 100vh;
     width: 100%;
     margin:0;
@@ -110,16 +119,334 @@ footer{
         scale:1;
     }
 }
-section .content, section h1, .other-info{
+
+section .content, section h1, .other-info, section .news{
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
-section .content, section h1, .other-info{
-    animation: appear 2s linear;
+.news h1, .news .carousel-item, .news p, .controls-btn{
+    animation: appear 1.3s linear;
+} 
+.news h1{
+    margin-bottom: 0em;
+}
+.contact .info{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.contact .info img{
+    width: 30px;
+
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin: auto;
+    gap:0.5em;
+    max-width: 1000px;
+    position:relative;
+}
+.controls-btn{
+    background-color: black;
+    border: 3px solid white;
+    padding:0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    z-index: 1;
+}
+#controls-left{
+    left:0;
+    margin-left:0.3em;
+}
+#controls-right{
+    right:0;
+    margin-right: 0.3em;
+}
+#number-of-news{
+    text-align: right;
+    position: absolute;
+    width: 70%;
+    top: 0;
+    font-weight: bolder;
+    text-shadow: 4px 6px 4px black;
+    padding:0;
+}
+.carousel-item, .other-news{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding:1.5em;
+    background-repeat: round;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    border:#112e42 solid;
+}
+.carousel-item h2, .other-news h2{
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.763);
+    padding: 0.5em;
+    font-size: 1rem;
+}
+.carousel-item button, .other-news button{
+    font-size: 1rem;
+    font-weight: bold;
+    padding:0.2em 0.5em;
+    cursor: pointer;
+}
+p{
+    text-align: justify;
+}
+.current-news{
+    min-height: 100vh;
+    padding: 0em 1em;
+    padding-bottom: 4em;
+}
+#other-news-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap:2em;
+    align-items: center;
+    padding-bottom: 4em;
+    padding-left: 0em;
+    padding-right: 0em;
+    margin:0;
+}
+.other-news{
+    width: 80%;
+    height: 150px;
+}  
+
+.publish-news{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding:0.2em 0.5em;
+    cursor: pointer;
+}
+dialog{
+  background-color: #112e42;
+  border-color: #112e42;
+  color: white;
+  width: 100%;
+  min-height: 100vh;
+}
+.dialog-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top:0;
+    padding: 1em 0em;
+    max-width: 700px;
+    margin: auto;
+    background-color: #112e42;
+    width: 100%;
+}
+
+.dialog-header .news-controls{
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+.dialog-header img{
+    width: 35px;
+    cursor: pointer;
+}
+dialog .read h1{
+    font-size: 1.3rem;
+    text-align: left;
+}
+dialog .read img{
+    width: 100%;
+    max-width: 600px;
+}
+dialog .read{
+    max-width: 700px;
+    margin: auto;
+}
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #112e42;
+}
+.powerful-word{
+   color:#00ABF0;
+}
+#news-add{
+    height: 90vh;
+    overflow-y: scroll;
+}
+.zone{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 500px;
+    gap:0.5em;
+    margin:auto;
+    margin-top:1.2em;
+}
+
+.zone input, .zone textarea{
+    font-size: 1rem;
+}
+
+.form-news button{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding:0.2em 2em;
+    cursor: pointer;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+}
+.form-news .news-image .photo{
+    width: 80%;
+    height: 200px;
+    max-width: 500px;
+    cursor: pointer;
+}
+.header-form{
+    position: sticky;
+    top:0;
+    padding: 1em 0em;
+    margin: auto;
+    background-color: #112e42;
+    width: 100%;
+}
+.header-form h1{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    font-size: 1.2rem;
+    margin-left: 1em;
+}
+.news-image{
+    position: relative;
+}
+.news-image .camera{
+    position:absolute;
+    width: 40px;
+    bottom: 5%;
+    right: 15%;
+   background-color: white;
+   padding:0.5em;
+   border-radius: 50%;
+   cursor: pointer;
+}
+input[type="file"]{
+    display: none;
+}
+.news-image label{
+    cursor: pointer;
+}
+.back{
+    cursor: pointer;
+}
+.contact-form-btn{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding:0.2em 2em;
+    cursor: pointer;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+}
+.contact .text{
+    padding-bottom: 0.5em;
+}
+.contact label{
+    font-size: 1rem;
+}
+dialog .message-dialog{
+    background-color: #112e42;
+    border-color: #112e42;
+    color: white;
+    margin:auto;
   }
-  
+.message-dialog {
+    width: 100%;
+    max-width: 300px;
+    background-color: #112e42;
+    color:white;
+    border-radius: 18px;
+    padding-top: 0em;    
+    min-height:fit-content !important;
+    max-height: fit-content !important;
+
+}
+.message-dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.79);
+}
+.message-dialog button{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding:0.2em 1.5em;
+    cursor: pointer;
+
+}
+
 @media (min-width: 1024px) {
+    dialog{
+        overflow-y: hidden;
+    }
+    .other-news-header{
+        padding: 1em 0em;
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: #081b29;
+
+    }
+    .other-news-header h1{
+        width: 100%;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    .this-news{
+        display: flex;
+    }
+    .other-news{
+        width: 60%;
+    }  
+    .current-news{
+        width: 60%;
+        overflow-y: scroll;
+        height: 90vh;
+    }
+    #other-news-list{
+        overflow-y: scroll;
+        padding-top:1.2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:2em;
+        align-items: center;
+        background-color: #081b29;
+        width: 40%;
+        height: 90vh;
+        padding-bottom: 4em;
+    }
     .content{
         display: flex; 
         justify-content: center;
@@ -152,11 +479,53 @@ section .content, section h1, .other-info{
         display: none;
     }
     nav{
-        height: fit-content;
         overflow-y: visible;
         flex-direction: row;
         justify-content: space-evenly;
-        padding:0em 0em 1em 0em;
+        padding:1.5em 0em 1.5em 0em;
+    }
+    dialog .read img{   
+        height: 300px;
+    }
+    dialog .form-news .form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap:1em;
+        width: 80%;
+        margin:auto;
+    }
+    .inputs{
+        width: 100%;
+    }
+    .news-image{
+      width: 100%;
+      margin-top: 3em;
+    }
+    .news-image .photo{
+        min-height: 280px;
+        max-height: 280px;
+    }
+    .form-news{
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact .content{
+        width: 85%;
+        margin: auto;
+        gap: 0em;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact .text{
+        margin-top: -2em;
+    }
+    .contact .contact-form{
+       width: 40%;
+  
     }
 }
 
