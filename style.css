@@ -1,3 +1,9 @@
+* {
+    outline: none;
+}
+button:focus, input:focus, textarea:focus {
+    outline: 2px solid #00ABF0; 
+}
 html{
     scroll-behavior: smooth;
 }
@@ -28,7 +34,7 @@ header h1{
     gap:0.5em;
     cursor: pointer;
 }
-header img{
+header .menu{
     width: 25px;
     height: 25px;
 }
@@ -44,7 +50,6 @@ nav{
     height: 0vh;
     z-index: 2;
     position:fixed;
-    top:8;
     left:0;
     transition:0.5s;
 }
@@ -110,23 +115,80 @@ footer{
     width: 100%;
     margin:0;
 }
+
 @keyframes appear {
     from{
         opacity: 0;
-        scale:0.9;
+        scale:0;
     }to{
         opacity: 1;
         scale:1;
     }
 }
 
-section .content, section h1, .other-info, section .news{
+@keyframes slide{
+    from{
+        transform: translateY(100%);
+        opacity: 0;
+    }to{
+        transform: translateY(0);
+        opacity:1; 
+    }
+}
+
+@keyframes appearLoading {
+    from{
+        transform: translateY(-500px);
+        opacity: 0;
+    }to{
+        transform: translateY(0px);
+        opacity:1;
+    }
+}
+
+@keyframes appearDialogPage{
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+section h1, section img, .contact-form  {
   animation: appear linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+  animation-range-start: cover 0%;
+  animation-range-end: contain 50%;
 }
-.news h1, .news .carousel-item, .news p, .controls-btn{
+section .text, section .other-info{
+    animation: slide linear 5s;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 30%;
+  }
+.form-news, .header-form{
+    animation: appearDialogPage 0.5s linear;
+}
+.current-news, .other-news, .other-news-header{
+    animation: appearDialogPage 0.5s linear;
+}
+.show-with-animcation{
+    animation: appearDialogPage 0.5s linear;
+}
+.news p, .publish-news{
+    animation: appearDialogPage 1.3s linear;
+}
+.news h1, .news .carousel-item, .controls-btn{
     animation: appear 1.3s linear;
+}  
+
+.loader-logo{
+    animation: appearLoading 1.3s linear;
+}
+.loader-wait{
+    animation: appear 2.3s linear;
 } 
 .news h1{
     margin-bottom: 0em;
@@ -192,10 +254,10 @@ section .content, section h1, .other-info, section .news{
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.763);
     padding: 0.5em;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 .carousel-item button, .other-news button{
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     padding:0.2em 0.5em;
     cursor: pointer;
@@ -207,6 +269,7 @@ p{
     min-height: 100vh;
     padding: 0em 1em;
     padding-bottom: 4em;
+    word-wrap: break-word;
 }
 #other-news-list{
     display: flex;
@@ -250,6 +313,10 @@ dialog{
     width: 100%;
 }
 
+#read-content{
+    width: 100%;
+    word-wrap: break-word;
+}
 .dialog-header .news-controls{
     display: flex;
     align-items: center;
@@ -263,9 +330,21 @@ dialog .read h1{
     font-size: 1.3rem;
     text-align: left;
 }
+.read-image{
+    background-color: #081b29;
+    width: 100%;
+    max-width: 600px;
+    min-height: 20px;
+}
+.image-input{
+    width: 80%;
+    min-height: 200px;
+    max-width: 500px;
+}
 dialog .read img{
     width: 100%;
     max-width: 600px;
+    min-height: 210px;
 }
 dialog .read{
     max-width: 700px;
@@ -309,10 +388,6 @@ dialog .read{
     margin-top:1.2em;
 }
 
-.zone input, .zone textarea{
-    font-size: 1rem;
-}
-
 .form-news button{
     font-size: 1.3rem;
     font-weight: bold;
@@ -322,8 +397,8 @@ dialog .read{
     margin-bottom: 2em;
 }
 .form-news .news-image .photo{
-    width: 80%;
-    height: 200px;
+    width: 100%;
+    min-height: 200px;
     max-width: 500px;
     cursor: pointer;
 }
@@ -334,6 +409,7 @@ dialog .read{
     margin: auto;
     background-color: #112e42;
     width: 100%;
+    z-index: 4;
 }
 .header-form h1{
     text-align: center;
@@ -343,18 +419,26 @@ dialog .read{
     font-size: 1.2rem;
     margin-left: 1em;
 }
+.header-form img{
+    width: 35px;
+    cursor: pointer;
+}
 .news-image{
     position: relative;
+    width: 100%;
+    max-width: 500px;
 }
+
 .news-image .camera{
     position:absolute;
-    width: 40px;
-    bottom: 5%;
-    right: 15%;
-   background-color: white;
-   padding:0.5em;
-   border-radius: 50%;
-   cursor: pointer;
+    width: 35px;
+    bottom: 0;
+    right: 10%;
+    background-color: white;
+    padding:0.3em;
+    border-radius: 50%;
+    cursor: pointer;
+    margin:0.5em;
 }
 input[type="file"]{
     display: none;
@@ -386,8 +470,8 @@ dialog .message-dialog{
     margin:auto;
   }
 .message-dialog {
-    width: 100%;
-    max-width: 300px;
+    width: 75%;
+    max-width: 500px;
     background-color: #112e42;
     color:white;
     border-radius: 18px;
@@ -397,16 +481,46 @@ dialog .message-dialog{
 
 }
 .message-dialog::backdrop{
-    background-color: rgba(0, 0, 0, 0.79);
+    background-color: rgba(0, 0, 0, 0.227);
 }
 .message-dialog button{
     font-size: 1.2rem;
     font-weight: bold;
     padding:0.2em 1.5em;
     cursor: pointer;
-
+    margin-top: 0.5em;
+    border-radius: 16px;
 }
-
+.dialog-wait{
+   background-color: rgba(255, 255, 255, 0);
+   border:none;
+}
+.dialog-wait img{
+    width: 60%;
+    max-width: 500px;
+    border:none;
+}
+.zone input, .zone textarea{
+    font-size: 1rem;
+}
+.ets-link span{
+    padding:0.5em 0em;
+    border-bottom: white solid 2px;
+}
+.contact .text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contact .text span{
+    font-size: 0.8rem;
+}
+.contact .text .info{
+    margin-left: 2em;
+}
+input, textarea{
+    padding:0.5em;
+}
 @media (min-width: 1024px) {
     dialog{
         overflow-y: hidden;
@@ -416,7 +530,7 @@ dialog .message-dialog{
         max-width: 700px;
         margin: 0 auto;
         background-color: #081b29;
-
+        color:rgba(255, 255, 255, 0.621);
     }
     .other-news-header h1{
         width: 100%;
@@ -463,7 +577,7 @@ dialog .message-dialog{
         margin-top: 3em;
     }
     section{
-        padding-top: 6em;
+        padding-top: 7em;
     }
     .text{
         width: 40%;
@@ -521,11 +635,13 @@ dialog .message-dialog{
         align-items: center;
     }
     .contact .text{
-        margin-top: -2em;
+        margin-top: -4em;
+    }
+    .contact .text span{
+        font-size: 1rem;
     }
     .contact .contact-form{
        width: 40%;
   
     }
 }
-
