@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +7,7 @@
     <link rel="shortcut img/icon" href="img/icon/logo.ico" type="image/x-img/icon" />
     <title>NEW GENERATION</title>
     <script src="script.js"></script>
+    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preload" href="img/experience.jpeg" as="image" />
     <link rel="preload" href="img/research.jpg" as="image" />
@@ -25,7 +25,7 @@
     <header>
         <h1 onclick="topSecret()"><img src="img/icon/star.png" alt=""><span class="powerful-word">NEW -
                 GENERATION</span></h1>
-        <img src="img/icon/menu.png" id="menu" onclick="toggleMenu()" />
+        <img src="img/icon/menu.png" id="menu" class="menu" onclick="toggleMenu()" />
     </header>
     <nav id="nav">
         <div class="nav-link">
@@ -120,7 +120,7 @@
             </div>
         </section>
         <section class="experience" id="experience">
-            <h1><span class="powerful-word">Experience</span> In The Research Sector</h1>
+            <h1>Our <span class="powerful-word">Experience</span> In The Research Sector</h1>
             <div class="content">
                 <img class="section-image" src="img/experience.jpeg" />
                 <div class="text">
@@ -221,37 +221,39 @@
             <h1>Our <span class="powerful-word">Contacts</span></h1>
             <div class="content">
                 <div class="text">
-                    <div class="info">
+                    <div class="info ets-link" onclick="goToPhone()">
                         <img src="img/icon/phone.png" />
                         <span>+243 816 915 107</span>
                     </div>
-                    <div class="info">
+                    <div class="info ets-link" onclick="goToEmail1()">
                         <img src="img/icon/gmail.png" />
                         <span>josephkalemba@n-generation.org</span>
                     </div>
-                    <div class="info">
+                    <div class="info ets-link" onclick="goToEmail2()">
                         <img src="img/icon/gmail.png" />
                         <span>jkalembam2@gmail.com</span>
                     </div>
-                    <div class="info">
+                    <div class="info ets-link" onclick="goToSkype()">
                         <img src="img/icon/skype.png" />
                         <span>joseph.kalemba2</span>
                     </div>
-                    <div class="info">
+                    <div class="info ets-link" onclick="goToLocation()">
                         <img src="img/icon/location.png" />
                         <span>5151, Av. Kasavubu, Matonge</span>
                     </div>
                 </div>
                 <div class="contact-form">
                     <div class="zone">
-                        <label>Enter your email :</label>
-                        <input type="email" maxlength="120" id="contact-email">
+                        <label>Enter your name :</label>
+                        <input type="email" maxlength="120" id="contact-name">
                     </div>
                     <div class="zone">
                         <label>Write your message :</label>
-                        <textarea id="contact-message" cols="30" rows="5" maxlength="600"></textarea>
+                        <textarea id="contact-message" cols="30" rows="5" maxlength="600" autocomplete="off"></textarea>
                     </div>
-                    <center> <button class="contact-form-btn" onclick="sendMessage()">Send</button></center>
+                    <center> <button class="contact-form-btn" onclick="sendMessage()" autocomplete="off">Send</button>
+                    </center>
+
                 </div>
             </div>
         </section>
@@ -267,7 +269,8 @@
                     </div>
                     <div class="read">
                         <h1 id="read-title"></h1>
-                        <div class="read-image"><img id="read-image" /></div>
+                        <p id="read-date" style="color:rgba(255, 255, 255, 0.621); font-size:0.85rem"></p>
+                        <div class="read-image"><img id="read-image" src="img/news-image.jpg"/></div>
                         <p id="read-content"></p>
                     </div>
                 </div>
@@ -312,9 +315,10 @@
             <div class="form-news">
                 <div class="form">
                     <center class="news-image">
-                        <label for="fileInput">
+                        <label class="news-image-container" for="fileInput">
                             <div class="read-edit-image image-input"><img id="news-edit-image" class="photo"
-                                    src="img/news-image.jpg" /></div>
+                                    src="img/news-image.jpg" />
+                            </div>
                             <img class="camera" src="img/icon/camera.png">
                         </label>
                         <input type="file" id="fileInput" onchange="getImageFromDevice()">
@@ -331,7 +335,6 @@
                         </div>
                     </div>
                 </div>
-                <p id="php-message"></p>
                 <center> <button onclick="editNews()">EDIT</button></center>
             </div>
         </dialog>
