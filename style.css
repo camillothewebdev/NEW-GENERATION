@@ -1,6 +1,7 @@
-* {
+*{
     outline: none;
 }
+
 button:focus, input:focus, textarea:focus {
     outline: 2px solid #00ABF0; 
 }
@@ -465,15 +466,13 @@ input[type="file"]{
     font-size: 1rem;
 }
 dialog .message-dialog{
-    background-color: #112e42;
-    border-color: #112e42;
     color: white;
     margin:auto;
   }
 .message-dialog {
     width: 75%;
     max-width: 500px;
-    background-color: #112e42;
+    background-color: #215578;
     color:white;
     border-radius: 18px;
     padding-top: 0em;    
@@ -482,7 +481,7 @@ dialog .message-dialog{
 
 }
 .message-dialog::backdrop{
-    background-color: rgba(0, 0, 0, 0.227);
+    background-color: rgba(0, 0, 0, 0.412);
 }
 .message-dialog button{
     font-size: 1.2rem;
