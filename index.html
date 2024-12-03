@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut img/icon" href="img/icon/logo.ico" type="image/x-img/icon" />
     <title>NEW GENERATION</title>
-    <script src="script.js"></script>
-    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preload" href="img/experience.jpeg" as="image" />
     <link rel="preload" href="img/research.jpg" as="image" />
@@ -19,8 +18,8 @@
 
 <body>
     <center id="loading">
-        <img class="loader-logo" src="img/new-generation.png" width="60%" style="max-width:300px;">
-        <img class="loader-wait" src="img/loader.gif" width="40%" style="max-width:200px;">
+        <img tabindex="-1" class="loader-logo" src="img/new-generation.png" width="60%" style="max-width:300px;">
+        <img tabindex="-1" class="loader-wait" src="img/loader.gif" width="40%" style="max-width:200px;">
     </center>
     <header>
         <h1 onclick="topSecret()"><img src="img/icon/star.png" alt=""><span class="powerful-word">NEW -
@@ -344,12 +343,12 @@
         <dialog id="dialog-message" class="message-dialog">
             <center>
                 <h3 id="dialog-message-content"></h3>
-                <button name="" id="btn-ok" onclick="closeMessageDialog()">OK</button>
+                <button  tabindex="-1" name="" id="btn-ok" onclick="closeMessageDialog()">OK</button>
             </center>
         </dialog>
         <dialog id="dialog-wait" class="message-dialog dialog-wait">
             <center>
-                <img src="img/wait.gif" class="loader">
+                <img tabindex="-1" src="img/wait.gif" class="loader">
             </center>
         </dialog>
     </main>
