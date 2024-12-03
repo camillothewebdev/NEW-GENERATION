@@ -156,7 +156,7 @@ footer{
     }
 }
 
-section h1, section img  {
+section h1, section img {
   animation: appear linear;
   animation-timeline: view();
   animation-range-start: cover 0%;
@@ -167,7 +167,7 @@ section .text, section .other-info, .contact-form{
     animation: slide linear 5s;
     animation-timeline: view();
     animation-range-start: cover 0%;
-    animation-range-end: contain 30%;
+    animation-range-end: cover 20%;
   }
 .form-news, .header-form{
     animation: appearDialogPage 0.5s linear;
@@ -667,5 +667,11 @@ input, textarea{
       }
       .download{
         display: none;
+      }
+      section .text, section .other-info, .contact-form{
+        animation: slide linear 5s;
+        animation-timeline: view();
+        animation-range-start: cover 0%;
+        animation-range-end: cover 40%;
       }
 }
