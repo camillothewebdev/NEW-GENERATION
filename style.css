@@ -156,13 +156,14 @@ footer{
     }
 }
 
-section h1, section img, .contact-form  {
+section h1, section img  {
   animation: appear linear;
   animation-timeline: view();
   animation-range-start: cover 0%;
   animation-range-end: contain 50%;
 }
-section .text, section .other-info{
+
+section .text, section .other-info, .contact-form{
     animation: slide linear 5s;
     animation-timeline: view();
     animation-range-start: cover 0%;
@@ -506,6 +507,7 @@ dialog .message-dialog{
 .ets-link span{
     padding:0.5em 0em;
     border-bottom: white solid 2px;
+    color:white;
 }
 .contact .text{
     display: flex;
@@ -520,6 +522,19 @@ dialog .message-dialog{
 }
 input, textarea{
     padding:0.5em;
+}
+.download{
+   background-color: #081b29;
+   padding:1.5em;
+}
+.download p{
+    margin:0;
+    text-align: center;
+}
+.download a, .download a:visited{
+    color: #00ABF0;
+    padding:0.3em 0em;
+    border-bottom: solid #00ABF0 2px;
 }
 @media (min-width: 1024px) {
     dialog{
@@ -644,4 +659,13 @@ input, textarea{
        width: 40%;
   
     }
+    .contact-form{
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range-start: cover 0%;
+        animation-range-end: contain 50%;
+      }
+      .download{
+        display: none;
+      }
 }
