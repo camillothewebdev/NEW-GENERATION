@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut img/icon" href="img/icon/logo.ico" type="image/x-img/icon" />
+    <link
+      rel="shortcut img/icon"
+      href="img/icon/logo.ico"
+      type="image/x-img/icon"
+    />
     <title>NEW GENERATION</title>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
@@ -13,346 +16,447 @@
     <link rel="preload" href="img/team.jpg" as="image" />
     <link rel="preload" href="img/why.jpg" as="image" />
     <link rel="preload" href="img/news-image.jpg" as="image" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <center id="loading">
-        <img tabindex="-1" class="loader-logo" src="img/new-generation.png" width="60%" style="max-width:300px;">
-        <img tabindex="-1" class="loader-wait" src="img/loader.gif" width="40%" style="max-width:200px;">
+      <img
+        tabindex="-1"
+        class="loader-logo"
+        src="img/new-generation.png"
+        width="60%"
+        style="max-width: 300px"
+      />
+      <img
+        tabindex="-1"
+        class="loader-wait"
+        src="img/loader.gif"
+        width="40%"
+        style="max-width: 200px"
+      />
     </center>
     <header>
-        <h1 onclick="topSecret()"><img src="img/icon/star.png" alt=""><span class="powerful-word">NEW -
-                GENERATION</span></h1>
-        <img src="img/icon/menu.png" id="menu" class="menu" onclick="toggleMenu()" />
+      <h1 onclick="topSecret()">
+        <img src="img/icon/star.png" alt="" /><span class="powerful-word"
+          >NEW - GENERATION</span
+        >
+      </h1>
+      <img
+        src="img/icon/menu.png"
+        id="menu"
+        class="menu"
+        onclick="toggleMenu()"
+      />
     </header>
     <nav id="nav">
-        <div class="nav-link">
-            <img src="img/icon/news.png" />
-            <a href="#news">News</a>
-        </div>
-        <div class="nav-link">
-            <img src="img/icon/about.png" />
-            <a href="#home">About Us</a>
-        </div>
-        <div class="nav-link">
-            <img src="img/icon/experiences.png" />
-            <a href="#experience">Experience</a>
-        </div>
-        <div class="nav-link">
-            <img src="img/icon/team.png" />
-            <a href="#force">Force</a>
-        </div>
-        <div class="nav-link">
-            <img src="img/icon/why.png" />
-            <a href="#why">Why Us</a>
-        </div>
-        <div class="nav-link">
-            <img src="img/icon/contact.png" />
-            <a href="#contact">Contacts</a>
-        </div>
+      <div class="nav-link">
+        <img src="img/icon/news.png" />
+        <a href="#news">Actualitées</a>
+      </div>
+      <div class="nav-link">
+        <img src="img/icon/about.png" />
+        <a href="#home">A propos de nous</a>
+      </div>
+      <div class="nav-link">
+        <img src="img/icon/experiences.png" />
+        <a href="#experience">Experience</a>
+      </div>
+      <div class="nav-link">
+        <img src="img/icon/team.png" />
+        <a href="#force">Notre force</a>
+      </div>
+      <div class="nav-link">
+        <img src="img/icon/why.png" />
+        <a href="#why">Pourquoi nous</a>
+      </div>
+      <div class="nav-link">
+        <img src="img/icon/contact.png" />
+        <a href="#contact">Contacts</a>
+      </div>
     </nav>
     <main>
-        <section class="news" id="news">
-            <h1>Our <span class="powerful-word">News</span></h1>
-            <div class="controls" id="news-controls">
-                <p id="number-of-news"></p>
-                <img src="img/icon/left.png" class="controls-btn" id="controls-left" onclick="previews()" />
-                <div class="carousel-container" id="my-carousel">
-                    <div class="carousel" id="carousel">
-
-                    </div>
-                </div>
-                <img src="img/icon/right.png" class="controls-btn" id="controls-right" onclick="next()" />
+      <section class="news" id="news">
+        <h1>NOS <span class="powerful-word">ACTUALITEES</span></h1>
+        <div class="controls" id="news-controls">
+          <p id="number-of-news"></p>
+          <img
+            src="img/icon/left.png"
+            class="controls-btn"
+            id="controls-left"
+            onclick="previews()"
+          />
+          <div class="carousel-container" id="my-carousel">
+            <div class="carousel" id="carousel"></div>
+          </div>
+          <img
+            src="img/icon/right.png"
+            class="controls-btn"
+            id="controls-right"
+            onclick="next()"
+          />
+        </div>
+        <center>
+          <button class="publish-news" onclick="showNewsAdd()">
+            Publier une actualitée
+          </button>
+        </center>
+      </section>
+      <section class="home" id="home">
+        <h1><span class="powerful-word">A PROPOS </span> DE NOUS</h1>
+        <div class="content">
+          <img class="section-image" src="img/research.jpg" />
+          <div class="text">
+            <p>
+              New Generation est une agence indépendante d’études de marchés et
+              évaluation des projets. Nous faisons la recherche, les enquêtes
+              sur terrain, la traduction de documents et autres services
+              relatifs pour faciliter les investissements et le partenariat.
+            </p>
+            <p>
+              Nous proposons des services de qualités aux coûts imbattables;
+              nous fournissons aux entreprises et diverses organisations des
+              informations et données de qualité pour comprendre l’environnement
+              ou le secteur de leurs activités afin d’ évaluer leurs actions et
+              orienter leurs décisions pour des stratégies efficaces en vue
+              d’une meilleure performance dans les affaires.
+            </p>
+            <div class="info">
+              <img src="img/icon/location.png" />
+              <span
+                >SIEGE : KINHASA, RD CONGO & Brazzaville, République du Congo
+              </span>
+            </div>
+            <div class="info">
+              <img src="img/icon/search.png" />
+              <span id="years-experience"
+                >Expérience de la recherche/des enquêtes: ?? ans</span
+              >
+            </div>
+            <div class="info">
+              <img src="img/icon/specialities.png" />
+              <span>
+                Spécialités de recherches: F2F (Interviews face-à-face), B2B
+                (Business to Business), FGD (Focus Group), IDI (Interview en
+                profondeur), Interviews semi-structurées, etc...
+              </span>
+            </div>
+            <div class="info">
+              <img src="img/icon/love.png" />
+              <span>
+                Nos valeurs : Nous aimons le travail, nous sommes élégants et
+                nous poursuivons l’excellence dans toutes nos activités
+              </span>
+            </div>
+            <div class="info">
+              <img src="img/icon/sector.png" />
+              <span>
+                Secteurs spécialisés: Secteur publique (social), Technologie &
+                Télécommunication, Recensement, Santé, Consommateurs, Services
+                financiers, etc...
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="experience" id="experience">
+        <h1>
+          NOTRE <span class="powerful-word"> EXPERIENCE</span> DANS LE SECTEUR
+        </h1>
+        <div class="content">
+          <img class="section-image" src="img/experience.jpeg" />
+          <div class="text">
+            <p>
+              En tant que fondateur de la structure, j’ai commencé à travailler
+              avec les entreprises ou les organisations de recherches depuis
+              2005 et l’agence New Generation a été créé en 2010. Notre équipe a
+              travaillée dans beaucoup d’études en République Démocratique du
+              Congo et en République du Congo en collaboration avec plusieurs
+              entreprises de recherches telles que Research Solutions, Research
+              international, RGA, NDI, TNS, Youth Dynamix, ORB, Milward Brown,
+              Geopoll, the DC Group et Ipsos. Avec ces organisations nous avons
+              réussis à travailler (individuellement ou collectivement) sur des
+              projets d’enquêtes dans les domaines suivants: Secteur publique/
+              social, Technologie & Télécommunication, Santé, Commerce de
+              détails, Consommateurs, services financiers, etc...
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="force" id="force">
+        <h1>NOTRE <span class="powerful-word">FORCE</span> SUR LE TERRAIN</h1>
+        <div class="content">
+          <img class="section-image" src="img/team.jpg" />
+          <div class="text">
+            <p>
+              Nous avons une équipe permanente de 5 personnes qui collaborent
+              pour la gestion de tous les projets à partir du bureau central et
+              dans chaque ville ou département nous avons créés des équipes qui
+              travaillent avec nous sur la collecte de données. En DRC nous
+              avons une base de donnée d’une équipe de plus de 200 membres
+              opérant dans les principales villes du pays. Nous avons 7
+              intervieweurs qualitatifs qualifiés basés à Kinshasa et
+              Brazzaville et ils voyagent dans les autres villes/départements en
+              cas de besoin.
+            </p>
+          </div>
+        </div>
+        <div class="other-info">
+          <p>
+            Nous avons aussi un réseau de plus de 100 membres basé à Brazzaville
+            et Pointe noire; Ils se déplacent dans les autres départements en
+            cas de besoin.
+          </p>
+          <p>
+            Nous avons plus de 100 appareils (tablettes Android de marque
+            Samsung, Itel & Oriamo) qui nous permettent de collecter les données
+            pour les transmettent dans le serveur.
+          </p>
+          <p>
+            Notre équipe de terrain est composée des personnes qui parlent
+            l’Anglais, le Français et les autres langues locales; ça nous permet
+            de réaliser les interviews facilement dans toutes les régions dans
+            les 2 pays voisins.
+          </p>
+          <p>
+            Tous les membres du personnel ont au moins une licence dans
+            plusieurs domaines tels qu’en informatique, droit, économie, santé
+            communautaire, communication d'entreprise, etc…; nous avons
+            également des médecins et infirmiers dans notre équipe.
+          </p>
+          <p>
+            Tous nos enquêteurs sont capables de traduire le questionnaire dans
+            la langue avec laquelle le répondant se sent à l'aise tandis que le
+            questionnaire principal est en français; Ainsi, même lorsque les
+            questions sont en français, nos intervieweurs sont en mesure
+            d’interagir avec les répondants dans leur propre langue. Néanmoins,
+            nous utilisons des questionnaires déjà traduits dans les langues
+            locales à la demande de certains clients / partenaires.
+          </p>
+        </div>
+      </section>
+      <section class="why" id="why">
+        <h1>
+          POURQUOI <span class="powerful-word">TRAVAILLER </span>AVEC NOUS ?
+        </h1>
+        <div class="content">
+          <img class="section-image" src="img/why.jpg" />
+          <div class="text">
+            <p>
+              Connaissances locales - Le fait d'être une équipe locale nous
+              donne une connaissance directe et une familiarité avec la culture
+              et les langues locales. Cela augmente également les chances de
+              notre acceptabilité par les habitants
+            </p>
+            <p>
+              Nos bureaux sont basés à Kinshasa et à Brazzaville; nous avons des
+              équipes et des personnes de contact dans toutes les villes de la
+              République Démocratique du Congo et en République du Congo.
+            </p>
+            <p>
+              Expérience: nous avons collectivement l'expérience de plusieurs
+              types de projets, y compris la recherche quantitative et
+              qualitative, et nous nous adaptons facilement à de nouvelles
+              choses et aux nouvelles technologies de l'information.
+            </p>
+            <p>
+              Nous allons nous rendre disponibles chaque fois que vous aurez
+              besoin de notre collaboration pour mener à bon vos projets; Nous
+              aimons le travail et nous visons toujours l’excellence à chaque
+              opportunité.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <h1>Nos <span class="powerful-word">Contacts</span></h1>
+        <div class="content">
+          <div class="text">
+            <div class="info ets-link" onclick="goToPhone()">
+              <img src="img/icon/phone.png" />
+              <span>+243 816 915 107</span>
+            </div>
+            <div class="info ets-link" onclick="goToEmail1()">
+              <img src="img/icon/gmail.png" />
+              <span>josephkalemba@n-generation.org</span>
+            </div>
+            <div class="info ets-link" onclick="goToEmail2()">
+              <img src="img/icon/gmail.png" />
+              <span>jkalembam2@gmail.com</span>
+            </div>
+            <div class="info ets-link" onclick="goToSkype()">
+              <img src="img/icon/skype.png" />
+              <span>joseph.kalemba2</span>
+            </div>
+            <div class="info ets-link" onclick="goToLocation()">
+              <img src="img/icon/location.png" />
+              <span>5151, Av. Kasavubu, Matonge</span>
+            </div>
+          </div>
+          <div class="contact-form">
+            <div class="zone">
+              <label>Entrez votre nom :</label>
+              <input type="email" maxlength="120" id="contact-name" />
+            </div>
+            <div class="zone">
+              <label>Ecrivez votre message :</label>
+              <textarea
+                id="contact-message"
+                cols="30"
+                rows="5"
+                maxlength="600"
+                autocomplete="off"
+              ></textarea>
             </div>
             <center>
-                <button class="publish-news" onclick="showNewsAdd()">Publish a news</button>
+              <button
+                class="contact-form-btn"
+                onclick="sendMessage()"
+                autocomplete="off"
+              >
+                Envoyer
+              </button>
             </center>
-        </section>
-        <section class="home" id="home">
-            <h1> <span class="powerful-word">ABOUT </span>US</h1>
-            <div class="content">
-                <img class="section-image" src="img/research.jpg" />
-                <div class="text">
-                    <p>
-                        New Generation is a Market and Social Research Company. We deal
-                        with research, surveys, translations, interpretation and other
-                        activities in order to facilitate investments, development and
-                        partnership.
-                    </p>
-                    <div class="info">
-                        <img src="img/icon/location.png" />
-                        <span>Location : KINSHASA, DR CONGO & Brazzaville, Congo rep</span>
-                    </div>
-                    <div class="info">
-                        <img src="img/icon/search.png" />
-                        <span id="years-experience">Research Experience: ?? years</span>
-                    </div>
-                    <div class="info">
-                        <img src="img/icon/specialities.png" />
-                        <span>
-                            Research Specialties: F2F (Face-to-Face interviews),B2B
-                            (Business-to-Business), FGDs (Focus Groups of discussions),
-                            IDIs, (In-depth Interviews), etc...
-                        </span>
-                    </div>
-                    <div class="info">
-                        <img src="img/icon/quality.png" />
-                        <span>We provide Good Quality Services at unbeatable costs.</span>
-                    </div>
-                    <div class="info">
-                        <img src="img/icon/love.png" />
-                        <span>
-                            We love working, we are elegant and aim excellence in all our
-                            activities
-                        </span>
-                    </div>
-                    <div class="info">
-                        <img src="img/icon/sector.png" />
-                        <span>
-                            Sector Specialities: Public Sector, Tech & Telecom, Health,
-                            Retail, Oil & Gas/C-Stores, Consumer, Financial Services,
-                            Automotive,...
-                        </span>
-                    </div>
+          </div>
+        </div>
+      </section>
+      <footer class="download">
+        <p>Telecharger l'<a href="img/NEW GENERATION.apk">Application</a></p>
+      </footer>
+      <dialog id="news-read">
+        <div class="this-news">
+          <div class="current-news" id="current-news">
+            <div class="dialog-header">
+              <img src="img/icon/back.png" onclick="closeNewsRead()" />
+              <div class="news-controls">
+                <img src="img/icon/edit.png" onclick="showNewsEdit()" />
+                <img src="img/icon/delete.png" onclick="deleteNews()" />
+              </div>
+            </div>
+            <div class="read">
+              <h1 id="read-title"></h1>
+              <p
+                id="read-date"
+                style="color: rgba(255, 255, 255, 0.621); font-size: 0.85rem"
+              ></p>
+              <div class="read-image">
+                <img id="read-image" src="img/news-image.jpg" />
+              </div>
+              <p id="read-content"></p>
+            </div>
+          </div>
+          <div id="other-news-list"></div>
+        </div>
+      </dialog>
+      <dialog id="news-add" class="page-dialog">
+        <div class="header-form">
+          <img src="img/icon/back.png" class="back" onclick="closeNewsAdd()" />
+          <h1>Publier une actualitée</h1>
+        </div>
+        <div class="form-news">
+          <div class="form">
+            <center class="news-image">
+              <label for="fileInput">
+                <div class="read-image image-input">
+                  <img id="news-image" class="photo" src="img/news-image.jpg" />
                 </div>
-            </div>
-        </section>
-        <section class="experience" id="experience">
-            <h1>Our <span class="powerful-word">Experience</span> In The Research Sector</h1>
-            <div class="content">
-                <img class="section-image" src="img/experience.jpeg" />
-                <div class="text">
-                    <p>
-                        As the team manager, I have been working with Research companies
-                        or organizations since 2005 and as a company New Generation was
-                        created in 2010. Our team members and especially the manager have
-                        worked in various field projects in DRC. We got involved in
-                        several Projects with several Research companies including
-                        Research Solutions, Research international, RGA, NDI, TNS, Youth
-                        Dynamix, ORB, Milward Brown, Geopoll, Ipsos, Soland associated
-                        consults, MRC and M&C Saatchi. With these various companies we
-                        have managed (as individual or as a company) to work on the
-                        following sector specialities: Public & Social Sector, Tech &
-                        Telecom, Health, Retail, Oil & Gas/C-Stores, Consumer, Financial
-                        Services, Automotive,...
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="force" id="force">
-            <h1>Our <span class="powerful-word">Force</span> As A Field Team</h1>
-            <div class="content">
-                <img class="section-image" src="img/team.jpg" />
-                <div class="text">
-                    <p>
-                        We have permanent team of 5 people that deal with all our projects
-                        in the central office and in all main cities we have teams that
-                        work with us on data collection in all our projects. For DRC we
-                        have a team of 30 interviewers in Kinshasa, 10 in Lubumbashi and 5
-                        in each of the other cities (Mbujimayi, Kananga, Matadi, Kikwit,
-                        Mbandaka, Kisangani, Goma, and Kindu). We have 7 qualitative
-                        qualified interviewers based in Kinshasa and they travel to work
-                        in the other cities in case of need.
-                    </p>
-                </div>
-            </div>
-            <div class="other-info">
-                <p>
-                    We also have 25 interviewers in Brazzaville and 1 contact person in
-                    each major town
-                </p>
-                <p>
-                    We have more than 55 devices (Android tablets/TECNO L9 & SMART+)
-                    which enable us to do Mobile Data Collection.
-                </p>
-                <p>
-                    Our staff and our interviewers speak French and at least 2 out of
-                    the 4 national languages; this enables us to carry out surveys in
-                    all DRC provinces using major/national languages (Lingala, Kikongo,
-                    Swahili, and Tshiluba) spoken in the 4 major tribes of the country
-                    in addition to French which is the official language.
-                </p>
-                <p>
-                    All staff members have at least a bachelor degree in Law, Economics,
-                    Community Health, Business Communication, and etc…We also have
-                    registered doctors/physicians and nurses among our team members
-                </p>
-                <p>
-                    All our interviewers are able to translate the questionnaire into
-                    the language the respondent feels comfortable with while the main
-                    questionnaire is in French; so even when the questions are in French
-                    our interviewers are able to interact with the respondents in their
-                    own languages. Still we use questionnaires that are already
-                    translated in the local languages when required by some
-                    clients/partners.
-                </p>
-            </div>
-        </section>
-        <section class="why" id="why">
-            <h1><span class="powerful-word">Why </span>Us ?</h1>
-            <div class="content">
-                <img class="section-image" src="img/why.jpg" />
-                <div class="text">
-                    <p>
-                        Local knowledge- Being a local team gives us first hand knowledge
-                        of local culture and languages. This also increases the chances of
-                        our acceptability by locals
-                    </p>
-                    <p>
-                        Our team is region based in DRC; we have teams and contact persons
-                        in all DRC provinces and Congo Republic regions
-                    </p>
-                    <p>We have advantage as sons and daughters of the locals</p>
-                    <p>
-                        Experience- We have collective hand on experience of several kinds
-                        of projects and we adapt easily to new things and new technology
-                        of information
-                    </p>
-                    <p>
-                        We will treat you as partners and not client, i.e our offices and
-                        staff will be open for you to shape and use to serve your purpose
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="contact" id="contact">
-            <h1>Our <span class="powerful-word">Contacts</span></h1>
-            <div class="content">
-                <div class="text">
-                    <div class="info ets-link" onclick="goToPhone()">
-                        <img src="img/icon/phone.png" />
-                        <span>+243 816 915 107</span>
-                    </div>
-                    <div class="info ets-link" onclick="goToEmail1()">
-                        <img src="img/icon/gmail.png" />
-                        <span>josephkalemba@n-generation.org</span>
-                    </div>
-                    <div class="info ets-link" onclick="goToEmail2()">
-                        <img src="img/icon/gmail.png" />
-                        <span>jkalembam2@gmail.com</span>
-                    </div>
-                    <div class="info ets-link" onclick="goToSkype()">
-                        <img src="img/icon/skype.png" />
-                        <span>joseph.kalemba2</span>
-                    </div>
-                    <div class="info ets-link" onclick="goToLocation()">
-                        <img src="img/icon/location.png" />
-                        <span>5151, Av. Kasavubu, Matonge</span>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <div class="zone">
-                        <label>Enter your name :</label>
-                        <input type="email" maxlength="120" id="contact-name">
-                    </div>
-                    <div class="zone">
-                        <label>Write your message :</label>
-                        <textarea id="contact-message" cols="30" rows="5" maxlength="600" autocomplete="off"></textarea>
-                    </div>
-                    <center> <button class="contact-form-btn" onclick="sendMessage()" autocomplete="off">Send</button>
-                    </center>
-
-                </div>
-            </div>
-        </section>
-        <footer class="download">
-            <p >Download <a href="img/NEW GENERATION.apk">Application</a></p>          
-        </footer>
-        <dialog id="news-read">
-            <div class="this-news">
-                <div class="current-news" id="current-news">
-                    <div class="dialog-header">
-                        <img src="img/icon/back.png" onclick="closeNewsRead()" />
-                        <div class="news-controls">
-                            <img src="img/icon/edit.png" onclick="showNewsEdit()" />
-                            <img src="img/icon/delete.png" onclick="deleteNews()" />
-                        </div>
-                    </div>
-                    <div class="read">
-                        <h1 id="read-title"></h1>
-                        <p id="read-date" style="color:rgba(255, 255, 255, 0.621); font-size:0.85rem"></p>
-                        <div class="read-image"><img id="read-image" src="img/news-image.jpg"/></div>
-                        <p id="read-content"></p>
-                    </div>
-                </div>
-                <div id="other-news-list"></div>
-            </div>
-        </dialog>
-        <dialog id="news-add" class="page-dialog">
-            <div class="header-form">
-                <img src="img/icon/back.png" class="back" onclick="closeNewsAdd()" />
-                <h1>Publish a news</h1>
-            </div>
-            <div class="form-news">
-                <div class="form">
-                    <center class="news-image">
-                        <label for="fileInput">
-                            <div class="read-image image-input"><img id="news-image" class="photo"
-                                    src="img/news-image.jpg" /></div>
-                            <img class="camera" src="img/icon/camera.png">
-                        </label>
-                        <input type="file" id="fileInput" onchange="getImageFromDevice()">
-                    </center>
-                    <div class="inputs">
-                        <div class="zone">
-                            <label>Title :</label>
-                            <input type="text" id="news-title" maxlength="80" autocomplete="off">
-                        </div>
-                        <div class="zone">
-                            <label>Content :</label>
-                            <textarea id="news-content" cols="30" rows="8" maxlength="600"
-                                autocomplete="off"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <center> <button onclick="addNews()">PUBLISH</button></center>
-            </div>
-        </dialog>
-        <dialog id="news-edit" class="page-dialog">
-            <div class="header-form">
-                <img src="img/icon/back.png" class="back" onclick="closeNewsEdit()" />
-                <h1>Edit a news</h1>
-            </div>
-            <div class="form-news">
-                <div class="form">
-                    <center class="news-image">
-                        <label class="news-image-container" for="fileInput">
-                            <div class="read-edit-image image-input"><img id="news-edit-image" class="photo"
-                                    src="img/news-image.jpg" />
-                            </div>
-                            <img class="camera" src="img/icon/camera.png">
-                        </label>
-                        <input type="file" id="fileInput" onchange="getImageFromDevice()">
-                    </center>
-                    <div class="inputs">
-                        <div class="zone">
-                            <label>Title :</label>
-                            <input type="text" id="news-edit-title" maxlength="80" autocomplete="off">
-                        </div>
-                        <div class="zone">
-                            <label>Content :</label>
-                            <textarea id="news-edit-content" cols="30" rows="8" maxlength="600"
-                                autocomplete="off"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <center> <button onclick="editNews()">EDIT</button></center>
-            </div>
-        </dialog>
-        <dialog id="dialog-message" class="message-dialog">
-            <center>
-                <h3 id="dialog-message-content"></h3>
-                <button  tabindex="-1" name="" id="btn-ok" onclick="closeMessageDialog()">OK</button>
+                <img class="camera" src="img/icon/camera.png" />
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                onchange="getImageFromDevice()"
+              />
             </center>
-        </dialog>
-        <dialog id="dialog-wait" class="message-dialog dialog-wait">
-            <center>
-                <img tabindex="-1" src="img/wait.gif" class="loader">
+            <div class="inputs">
+              <div class="zone">
+                <label>Titre :</label>
+                <input
+                  type="text"
+                  id="news-title"
+                  maxlength="80"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="zone">
+                <label>Contenu :</label>
+                <textarea
+                  id="news-content"
+                  cols="30"
+                  rows="8"
+                  autocomplete="off"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <center><button onclick="addNews()">ENREGISTRER</button></center>
+        </div>
+      </dialog>
+      <dialog id="news-edit" class="page-dialog">
+        <div class="header-form">
+          <img src="img/icon/back.png" class="back" onclick="closeNewsEdit()" />
+          <h1>Modifier une actualitée</h1>
+        </div>
+        <div class="form-news">
+          <div class="form">
+            <center class="news-image">
+              <label class="news-image-container" for="fileInput">
+                <div class="read-edit-image image-input">
+                  <img
+                    id="news-edit-image"
+                    class="photo"
+                    src="img/news-image.jpg"
+                  />
+                </div>
+                <img class="camera" src="img/icon/camera.png" />
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                onchange="getImageFromDevice()"
+              />
             </center>
-        </dialog>
+            <div class="inputs">
+              <div class="zone">
+                <label>Titre :</label>
+                <input
+                  type="text"
+                  id="news-edit-title"
+                  maxlength="80"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="zone">
+                <label>Contenu :</label>
+                <textarea
+                  id="news-edit-content"
+                  cols="30"
+                  rows="8"
+                  autocomplete="off"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <center><button onclick="editNews()">MODIFIER</button></center>
+        </div>
+      </dialog>
+      <dialog id="dialog-message" class="message-dialog">
+        <center>
+          <h3 id="dialog-message-content"></h3>
+          <button
+            tabindex="-1"
+            name=""
+            id="btn-ok"
+            onclick="closeMessageDialog()"
+          >
+            OK
+          </button>
+        </center>
+      </dialog>
+      <dialog id="dialog-wait" class="message-dialog dialog-wait">
+        <center>
+          <img tabindex="-1" src="img/wait.gif" class="loader" />
+        </center>
+      </dialog>
     </main>
-    <h1>Crée par <span class="powerful-word">Camillo Pande</span></h1>
-</body>
-
+  </body>
 </html>
